@@ -134,8 +134,7 @@
                   </div>
 
                   <span
-                    >Husnain metals, 559 block Block 1, Plot No, Sector C 1
-                    township, Lahore, 54000t</span
+                    > Plot # 559, Block # 1, Sector C-1 Township Lahore - Pakistan.</span
                   >
                 </div>
               </div>
@@ -256,7 +255,7 @@
                 Pakistan
               </li>
               <li><a href="tel:+8801682648101">03224409582</a></li>
-              <li><a href="mailto:info@example.com">info@example.com</a></li>
+              <li><a href="mailto:Husnain.metals.pk@gmail.com">Husnain.metals.pk@gmail.com</a></li>
             </ul>
           </div>
           <div class="social-links">
@@ -298,54 +297,6 @@
               <span class="count-text">01</span>
               <h6>focus on quality</h6>
               <h2>Solder Wire</h2>
-              <div class="link">
-                <a href="index.html"
-                  ><i class="flaticon-right-chevron"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="inner-box">
-            <div
-              class="bg-layer"
-              style="background-image: url(assets/images/main/Tinwire.jpg)"
-            ></div>
-            <div class="content-box">
-              <span class="count-text">02</span>
-              <h6>produce the best</h6>
-              <h2>Tin Wire</h2>
-              <div class="link">
-                <a href="index.html"
-                  ><i class="flaticon-right-chevron"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="inner-box">
-            <div
-              class="bg-layer"
-              style="background-image: url(assets/images/main/slider03.jpg)"
-            ></div>
-            <div class="content-box">
-              <span class="count-text">03</span>
-              <h6>Quick Turnaround</h6>
-              <h2>Lead Wire</h2>
-              <div class="link">
-                <a href="index.html"
-                  ><i class="flaticon-right-chevron"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="inner-box">
-            <div
-              class="bg-layer"
-              style="background-image: url(assets/images/main/slider04.jpg)"
-            ></div>
-            <div class="content-box">
-              <span class="count-text">04</span>
-              <h6>Edge Removal</h6>
-              <h2>Zinc Wire</h2>
               <div class="link">
                 <a href="index.html"
                   ><i class="flaticon-right-chevron"></i
@@ -399,7 +350,7 @@
                   <img src="assets/images/main/p13.png" alt="" />
                 </figure>
                 <div class="text">
-                  <h5>12+ Years Experienced</h5>
+                  <h5>20+ Years Experienced</h5>
                 </div>
               </div>
             </div>
@@ -422,16 +373,6 @@
                     Meet at one of those defining moments moment when our nation
                     is at war our economy.
                   </p>
-                </div>
-                <div class="inner-box">
-                  <div class="curve-text">
-                    <div class="icon-box"><i class="flaticon-reward"></i></div>
-                    <span class="curved-circle"
-                      >Manufactured with 100% quality</span
-                    >
-                  </div>
-                  <h4>ISM Certificate</h4>
-                  <p>Premium class, Guaranteed.</p>
                 </div>
               </div>
             </div>
@@ -627,14 +568,16 @@
                                 <p>0322 4409582</p>
                                 <li>Email</li>
                                 <div class="email">
-                                    <a href="mailto:appointment@example.com"
-                                    >info@example.com</a
+                                    <a href="mailto:Husnain.metals.pk@gmail.com"
+                                    >Husnain.metals.pk@gmail.com</a
+                                    >
+                                    <a href=""
+                                    >info@husnainmetals.com</a
                                     >
                                 </div>
                                 <li>Location</li>
                                 <p>
-                                  Husnain metals, 559 block Block 1, Plot No,
-                                  Sector C 1 township, Lahore, 54000t
+                                   Plot # 559, Block # 1, Sector C-1 Township Lahore - Pakistan.
                                 </p>
                             </ul>
                             <p>
@@ -860,6 +803,63 @@
         <i class="flaticon-down-chevron"></i>
       </button>
     </div>
+    <button class="toggle-button" onclick="toggleChat()"></button>
+    <div class="chat-container" id="chatContainer">
+      <div class="header"> Husnain Metals</div>
+      <div class="chat-messages">
+        <div class="message">Hi there</div>
+        <div class="message">How can we help you?</div>
+      </div>
+      <div class="input-container">
+        <input id="chatInput" placeholder="Type a message..." type="text" />
+        <button class="send-btn" id="sendBtn">
+          <svg
+            fill="white"
+            height="22px"
+            viewbox="0 0 24 24"
+            width="22px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M2 21l21-9L2 3v7l15 2-15 2z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script>
+      function toggleChat() {
+        const button = document.querySelector(".toggle-button");
+        const chat = document.getElementById("chatContainer");
+        chat.classList.toggle("active");
+        button.classList.toggle("cross");
+      }
+
+      function toggleChat() {
+        const chatContainer = document.getElementById("chatContainer");
+        const toggleButton = document.querySelector(".toggle-button");
+        chatContainer.classList.toggle("active");
+        toggleButton.classList.toggle("cross");
+      }
+
+      // WhatsApp sending logic
+      const phoneNumber = "9203224409582"; // no +
+      const chatInput = document.getElementById("chatInput");
+      const sendBtn = document.getElementById("sendBtn");
+
+      function sendMessage() {
+        const message = encodeURIComponent(chatInput.value.trim() || "Hello!");
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappURL, "_blank");
+        chatInput.value = "";
+      }
+
+      sendBtn.addEventListener("click", sendMessage);
+
+      chatInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          sendMessage();
+        }
+      });
+    </script>
 
     <!-- jequery plugins -->
     <script src="assets/js/jquery.js"></script>
