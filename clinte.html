@@ -166,25 +166,25 @@
                       id="navbarSupportedContent"
                     >
                       <ul class="navigation clearfix">
-                        <li class="current"><a href="index.html">Home</a></li>
-                        <li class="dropdown">
+                        <li><a href="index.html">Home</a></li>
+                        <li  class="dropdown current">
                           <a href="about.html">About</a>
                           <ul>
-                            <li><a href="clinte.html">Client Portfolio</a></li>
+                            <li ><a href="clinte.html" style="color: red;">Client Portfolio</a></li>
                             <li><a href="mission-and-vission.html">Our Mission & Vision</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
                           <a href="products.html">Products</a>
-                          <ul>
-                            <li><a href="products.html">Solder Wire</a></li>
-                            <li><a href="products.html">Tin Wire</a></li>
-                            <li><a href="products.html">Lead Wire</a></li>
-                            <li><a href="products.html">Zinc Wire</a></li>
-                            <li><a href="products.html">Copper Wire</a></li>
-                            <li><a href="products.html">Aluminium Wire</a></li>
-                            <li><a href="products.html">Copper cled Aluminium Wire</a></li>
-                          </ul>
+                            <ul>
+                              <li><a href="products.html#tab-1">Solder Wire</a></li>
+                              <li><a href="products.html#tab-2">Tin Wire</a></li>
+                              <li><a href="products.html#tab-3">Lead Wire</a></li>
+                              <li><a href="products.html#tab-4">Zinc Wire</a></li>
+                              <li><a href="products.html#tab-5">Copper Wire</a></li>
+                              <li><a href="products.html#tab-6">Aluminium Wire</a></li>
+                              <li><a href="products.html#tab-7">Copper Clad Aluminium Wire</a></li>
+                            </ul>
                         </li>
                         <li class=""><a href="gallery.html">Gallery</a></li>
                         <li class=""><a href="managemaent.html">Management</a></li>
@@ -401,6 +401,58 @@
                             </div>
                         </div>
                     </div>
+                      <div class="col-lg-3 col-md-6 col-sm-12 team-block" style="margin-right: 50px; margin-top: 50px;">
+                        <div class="team-block-one">
+                            <div class="inner-box">
+                                <div class="image-box border-1" style="height: 230px;">
+                                    <img src="assets/images/main/c8.jpg" alt="">
+                                    
+                                </div>
+                                <div class="lower-content">
+                                    <h3>Lahore Fans</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="col-lg-3 col-md-6 col-sm-12 team-block" style="margin-right: 50px; margin-top: 50px;">
+                        <div class="team-block-one">
+                            <div class="inner-box">
+                                <div class="image-box border-1" style="height: 230px;">
+                                    <img src="assets/images/main/c11.png" alt="">
+                                    
+                                </div>
+                                <div class="lower-content">
+                                    <h3>SK Fans</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="col-lg-3 col-md-6 col-sm-12 team-block" style="margin-right: 50px; margin-top: 50px;">
+                        <div class="team-block-one">
+                            <div class="inner-box">
+                                <div class="image-box border-1" style="height: 230px;">
+                                    <img src="assets/images/main/c9.jpg" style="margin-top: 50px;" alt="">
+                                    
+                                </div>
+                                <div class="lower-content">
+                                    <h3>Super Asia</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="col-lg-3 col-md-6 col-sm-12 team-block" style="margin-right: 50px; margin-top: 50px;">
+                        <div class="team-block-one">
+                            <div class="inner-box">
+                                <div class="image-box border-1" style="height: 230px;">
+                                    <img src="assets/images/main/c10.png" style="margin-top: 50px;" alt="">
+                                    
+                                </div>
+                                <div class="lower-content">
+                                    <h3>GFC Fans</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -519,7 +571,7 @@
                         <li><a href="products.html">Zinc Wire</a></li>
                         <li><a href="products.html">Copper Wire</a></li>
                         <li><a href="products.html">Aluminium Wire</a></li>
-                        <li><a href="products.html">Copper cled Aluminium Wire</a></li>
+                        <li><a href="products.html">Copper clad Aluminium Wire</a></li>
                       </ul>
                     </div>
                   </div>
@@ -577,6 +629,54 @@
         </button>
         
     </div>
+
+    <script>
+      (function () {
+        function activateTab(id) {
+          if (!id) return;
+          try {
+            var tab = document.querySelector(id);
+            var btn = document.querySelector('.tab-btns .tab-btn[data-tab="' + id + '"]');
+            if (tab && btn) {
+              document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active-tab'); });
+              document.querySelectorAll('.tab-btns .tab-btn').forEach(function (b) { b.classList.remove('active-btn'); });
+              tab.classList.add('active-tab');
+              btn.classList.add('active-btn');
+              // ensure tab area is visible (optional smooth scroll)
+              var container = document.querySelector('.tabs-box');
+              if (container) {
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }
+          } catch (e) { /* fail silently */ }
+        }
+
+        // On initial load, if the URL has a tab hash, open it
+        if (window.location.hash && window.location.hash.indexOf('#tab-') === 0) {
+          activateTab(window.location.hash);
+        }
+
+        // Support hashchange events
+        window.addEventListener('hashchange', function () {
+          if (location.hash && location.hash.indexOf('#tab-') === 0) activateTab(location.hash);
+        });
+
+        // Intercept clicks on any anchor that contains a tab fragment (e.g. products.html#tab-1)
+        document.addEventListener('click', function (e) {
+          var link = e.target.closest('a');
+          if (!link) return;
+          var href = link.getAttribute('href') || '';
+          var idx = href.indexOf('#tab-');
+          if (idx !== -1) {
+            e.preventDefault();
+            var id = href.substring(idx); // '#tab-1'
+            // update URL without adding history entry
+            try { history.replaceState(null, '', id); } catch (err) { location.hash = id; }
+            activateTab(id);
+          }
+        });
+      })();
+    </script>
 
 
     <!-- jequery plugins -->
